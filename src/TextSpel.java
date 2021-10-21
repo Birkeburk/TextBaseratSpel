@@ -11,7 +11,7 @@ public class TextSpel {
 
         Scanner myScanner = new Scanner(System.in);
 
-        File file = new File("Diablo2Theme.wav");
+       /* File file = new File("Diablo2Theme.wav");
 
         AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
         Clip clip = AudioSystem.getClip();
@@ -19,6 +19,9 @@ public class TextSpel {
 
 
         clip.start();
+
+
+        */
         printMenu();
 
     }
