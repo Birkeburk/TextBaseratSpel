@@ -1,27 +1,13 @@
-import javax.sound.sampled.*;
-import java.io.File;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class TextSpel {
 
    static boolean gameRunning = true;
 
-    public static void main(String[] args) throws LineUnavailableException, IOException, UnsupportedAudioFileException {
+    public static void main(String[] args) {
 
         Scanner myScanner = new Scanner(System.in);
 
-       /* File file = new File("Diablo2Theme.wav");
-
-        AudioInputStream audioStream = AudioSystem.getAudioInputStream(file);
-        Clip clip = AudioSystem.getClip();
-        clip.open(audioStream);
-
-
-        clip.start();
-
-
-        */
         printMenu();
 
     }
@@ -45,7 +31,6 @@ public class TextSpel {
     }
     public static String getUserString(){
         Scanner myScanner = new Scanner(System.in);
-
         return myScanner.nextLine();
     }
 
@@ -57,11 +42,9 @@ public class TextSpel {
         System.out.print("> ");
         int userChoice = getUserInt();
 
-        switch (userChoice){
-            case 1: characterOptions();
-            break;
-            case 2: gameRunning = false;
-            break;
+        switch (userChoice) {
+            case 1 -> characterOptions();
+            case 2 -> gameRunning = false;
         }
     }
     public static void characterOptions() {
@@ -72,17 +55,17 @@ public class TextSpel {
         System.out.print("> ");
         int characterChoice = getUserInt();
         if(characterChoice == 1){
-            Barbarian barb1 = new Barbarian(100,100,100, 2,1);
+            Barbarian barb = new Barbarian(100,100,100, 2,1);
             System.out.println("You chose the Barbarian class!");
             System.out.println("Loading game...");
         }
         if(characterChoice == 2){
-            Paladin pala1 = new Paladin(100,100,100, 2,1);
+            Paladin pala = new Paladin(100,100,100, 2,1);
             System.out.println("You chose the Paladin class!");
             System.out.println("Loading game...");
         }
         if(characterChoice == 3){
-            Sorceress sorc1 = new Sorceress(50,70,150,5, 1);
+            Sorceress sorc = new Sorceress(50,70,150,5, 1);
             System.out.println("You chose the Sorceress class!");
             System.out.println("Loading game...");
         }
